@@ -7,12 +7,6 @@ install:
 - brew install awscli
 script:
 - npm test
-- mkdir -p ~/.aws
-- cat > ~/.aws/credentials << EOL
-[default]
-aws_access_key_id = $AK
-aws_secret_access_key = $SK
-EOL
 env:
   global:
   - secure: FyiHBE5FxV1GbsYOFMHpDTPMf7KbNIgFwrnsrro5HCiyEqWG4T0kEPh0uBD7/qwI6UwE7swvE/eXIj+tv8B1s4HD+NkFXu7IPfi6Z/5eOlMfL69DiE/AElfSxWaYM7/qF0lxEsCJWuIEI787fHY7TZrSlQrARK4uy62g/3UIF/ppv55Am9MQR00XVj2oc15cxysDvKN6yqF0UUbiNs4BOhwYLeRyg7J3I6I+/zsMT/3WZXDSDSlATtxKroHBgLoDf/aWa7k+ZthEUJCqkFYAf+hm4tI2yL1MgQjxszhG5zryYSoomigvAk4OUth6wH9L5lq6AExhAz7Ykk6uaZm3KUVZ2wOT70Kka7ueqKAxhcvSCNas1IGZj/hliMdi54Wx4/DKn2QW2uSugi4/qx88INSN9jU6aGy6UNy6pDF24iS7ktbm2mOaUp/1ycpwfV/RRsnGILmJ9WvMQER6Wb0bo2lLPb1KJWv1XMf+TM+Ss+kKS8R+4SmOR9jcgR4KTC2Mj/7f4RD/L2Yzipl/uOQnK0fURkZteLMKjz3Prba+t1anuYk8thRtLqUQ75hv1WqjeE5CWvEeYXB8Ca5PcLVJO1ZbnJqx4alb4HbI8zaPM/sNr9yT7aI2VRvqdpKroizKItwsAfLXgnU4NtxpB6BtsYNcvT089U2Pkl+/y2qHm84=
