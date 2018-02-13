@@ -7,9 +7,9 @@ install:
 script:
 - npm test
 - echo $Key1
-- echo Key
-- echo AnotherKey
-- echo nothingHere
+- echo $Key
+- echo $AnotherKey
+- echo $nothingHere
 env:
   global:
   - secure: MlmN3VolJ/NfOA3DKNfnjn7fWmyD+TY30bW957CZlaJrtkcr4pk+OUr8HgMBfVG3bJpS3mcwer1z7Hf98egrDtybaytd7cyrfqObAJsQfDfM0sILlFPhUVi/ZYyoHGPUOndXCy55ioDsMDKM8KLo9VjGhaDXalqlDEfVb94v+6YF/P8rTIZWXYy0sx8bGmXNKJriWBcRlTJ6Si2ZW0DH07H5TIbWD0kzzMhBYp5auXVMPSN65iSQkVYk2MeLyDk8Lt7P/c16rHxlrml0GveSzBQjjXOpkChdpiKz5WoImWPeSzVmoB5ETPxfMt8ZQYCcFRLz++9h4Zr9SsR+QjQo1DrTg93lYe5d3++/iqKjlRCh13zQzy8NqMzWbtH6mvR/yFHkTEGJL/wrG7ZDjguuLl3nS/E9j4509wMcutS/t9KByaC9Dl30C9Mmwsxq8X5SU2KU+xbMyq62euJH6QDDiizDhiaMW2Ikc1yKMEpiH5RqKxQ5SRvnFXyLj77Lsj9n5p0RmBnW5NZByt9Mo9VEGTmhYZGrXIoJwO1EfJKcv170D0RvepSP/nFHTgHle0EIhfmXDkQRgCH46AosGoHdfF414HvldsiVLbu3Xj4JFxE/6nlggiuk7plYa7iLhMpOR7E9TqlQegHHv97c3AB8on8vgq7I9w5XcrHyTJcdk6o=
