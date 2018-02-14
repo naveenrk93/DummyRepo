@@ -14,7 +14,7 @@ install:
 
 script:
 - npm test
-- aws ec2 run-instances --image-id ami-79873901 --count 1 --instance-type t2.micro
+- aws cloudformation create-stack --stack-name MySTACK123 --template-body file://./../Downloads/Amazon_VPC_autoScaling.json --parameters ParameterKey=KeyName,ParameterValue=MyKey ParameterKey=WebServerInstanceType,ParameterValue=m3.large
 
 env:
   global:
