@@ -14,7 +14,7 @@ install:
 
 script:
 - npm test
-- aws cloudformation create-stack --stack-name MySTACK123 --template-body file://./../Downloads/Amazon_VPC_autoScaling.json --parameters ParameterKey=KeyName,ParameterValue=MyKey ParameterKey=WebServerInstanceType,ParameterValue=m3.large
+- aws cloudformation create-stack --stack-name MySTACK123 --template-body file://./Amazon_VPC_autoScaling.json --parameters ParameterKey=KeyName,ParameterValue=MyKey ParameterKey=WebServerInstanceType,ParameterValue=m3.large
 
 env:
   global:
