@@ -177,7 +177,7 @@
 ,
     "AWSRegionArch2AMI" : {
       "us-east-1"        : {"PV64" : "ami-2a69aa47", "HVM64" : "ami-6869aa05", "HVMG2" : "ami-3353c649"},
-      "us-west-2"        : {"PV64" : "ami-7f77b31f", "HVM64" : "ami-7172b611", "HVMG2" : "ami-58ce1220"},
+      "us-west-2"        : {"PV64" : "ami-7f77b31f", "HVM64" : "ami-79873901", "HVMG2" : "ami-58ce1220"},
       "us-west-1"        : {"PV64" : "ami-a2490dc2", "HVM64" : "ami-31490d51", "HVMG2" : "ami-62ad9502"},
       "eu-west-1"        : {"PV64" : "ami-4cdd453f", "HVM64" : "ami-f9dd458a", "HVMG2" : "ami-41bc0a38"},
       "eu-west-2"        : {"PV64" : "NOT_SUPPORTED", "HVM64" : "ami-886369ec", "HVMG2" : "NOT_SUPPORTED"},
@@ -313,7 +313,7 @@
         "RuleAction" : "allow",
         "Egress" : "false",
         "CidrBlock" : "0.0.0.0/0",
-        "PortRange" : { "From" : "80", "To" : "80" }
+        "PortRange" : { "From" : "80", "To" : "3000" }
       }
     },
 
@@ -450,7 +450,7 @@
         "AWS::CloudFormation::Init" : {
           "config" : {
             "packages" : {
-              "yum" : {
+              "apt-get" : {
                 "httpd" : []
               }
             },
@@ -512,15 +512,16 @@
         "AssociatePublicIpAddress" : "true",
         "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
           "#!/bin/bash -xe\n",
-          "yum update -y aws-cfn-bootstrap\n",
-
           "# Install the sample application\n",
           "sudo apt-get update\n",
-	  "sudo apt-get -y install python-software-properties\n",
-	  "curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -\n",
-	  "sudo apt-get -y install nodejs\n",
-	  "git clone https://pp-ilhw-services:M-J4yq%40P93ZH4L9-wkP7n%24%24FKxz_abP%3F@github.com/pp-ilhw-services/fobserv.git\n",
-	  "/opt/aws/bin/cfn-init -v ",
+          "curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -\n",
+          "sudo apt-get -y install nodejs\n",
+          "cd home/ubuntu/\n",
+          "sudo git clone https://pp-ilhw-services:M-J4yq%40P93ZH4L9-wkP7n%24%24FKxz_abP%3F@github.com/pp-ilhw-services/fobserv.git\n",
+          "cd fobserv/\n",
+          "sudo npm install\n",
+          "sudo npm start\n",
+          "/opt/aws/bin/cfn-init -v ",
           "    --stack ", { "Ref" : "AWS::StackId" },
           "    --resource WebServerLaunchConfig ",
           "    --region ", { "Ref" : "AWS::Region" }, "\n",
