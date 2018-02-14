@@ -515,7 +515,12 @@
           "yum update -y aws-cfn-bootstrap\n",
 
           "# Install the sample application\n",
-          "/opt/aws/bin/cfn-init -v ",
+          "sudo apt-get update\n",
+	  "sudo apt-get -y install python-software-properties\n",
+	  "curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -\n",
+	  "sudo apt-get -y install nodejs\n",
+	  "git clone https://pp-ilhw-services:M-J4yq%40P93ZH4L9-wkP7n%24%24FKxz_abP%3F@github.com/pp-ilhw-services/fobserv.git\n",
+	  "/opt/aws/bin/cfn-init -v ",
           "    --stack ", { "Ref" : "AWS::StackId" },
           "    --resource WebServerLaunchConfig ",
           "    --region ", { "Ref" : "AWS::Region" }, "\n",
