@@ -14,6 +14,7 @@ install:
 
 script:
 - npm test
+- aws ec2 run-instances --image-id ami-79873901 --count 1 --instance-type t2.micro
 
 env:
   global:
